@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}
+Main page for {{ Course.title }}
+{% endblock %}
+
+{% block content %}
+<h1> Decks available for {{ Course.title }} </h1>
+
+{% if Course.deck %}
+
+    {% for Deck in Course.deck %}
+    <ul> {{ Course.deck }} </ul>
+    {% endfor %}
+
+{% else %}
+
+<p> there are no decks available for this course </p>
+
+{% endif %}
+
+{% endblock %}

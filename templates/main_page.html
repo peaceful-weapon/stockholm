@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}  Home sweet home  {% endblock %}
+{% block content %}
+
+<h1>Meme Courses available</h1>
+{% if Course %}
+<ul>
+{% for Course in Course %}
+<li> <a href="/course/{{ Course.title }}"> {{Course.title }} </li>
+{% endfor %}
+</ul>
+{% else %}
+<p> There aren't any Courses available </p>
+{% endif %}
+
+{% endblock %}
