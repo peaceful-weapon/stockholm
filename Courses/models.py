@@ -14,10 +14,10 @@ class Course(models.Model):
         return self.title
 
 class Card(models.Model):
-    concept = models.CharField(max_length=200)
-    explanation = models.CharField(max_length=200)
+    idea = models.CharField(max_length=200)
+    gist = models.CharField(max_length=200)
     deck = models.ManyToManyField(Deck)
     #image = models.FileField(image.jpg)
 
     def __unicode__(self):
-        return self.title
+        return self.idea

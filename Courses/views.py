@@ -10,22 +10,27 @@ def main_page(request):
     output = template.render(variables)
     return HttpResponse(output)
 
-def course_view1(request, course_title):
-    Courses = Course.objects.get(title=course_title)
-    Decks = Courses.deck.all() 
+def course_view(request, course_title):
+    Course_instance = Course.objects.get(title=course_title)
+    Decks = Course_instance.deck.all() 
     template = get_template('course_view.html')
-    variables = Context(request, {
-        'Course': Courses,
+    variables = Context({
+        'Course': Course_instance,
         'Decks': Decks,
         })
 
     output = template.render(variables)
     return HttpResponse(output)
 
-def course_view(request, course_title):
-
-    Decks = Deck.objects.filter(course__title__exact=course_title)
-    #Courses = Course.objects.get(title=course_title).deck.all()
-    #Decks = Courses.deck.all() 
-    return render_to_response('course_test.html',
-            {'Decks': Decks})
+def deck_view(request, course_title, deck_title):
+    Course_instance = Course.objects.get(title=course_title)
+    Deck_instance = Deck.objects.get(title=deck_title)
+    Cards_from_deck = Card.objects.filter(deck=deck_title)
+    template = get_template('deck_of_cards.html')
+    variables = Context({
+        'Course': Course_instance,
+        'Deck': Deck_instance,
+        'Cards': Cards_from_deck
+        })
+    output = template.render(variables)
+    return HttpResponse(output)

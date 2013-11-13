@@ -1,0 +1,16 @@
+{% extends base.html %}
+{% block title %}
+Course {{ Course.title }} , Deck -- {{ Deck.title }}
+{% endblock %}
+
+{% block content %}
+
+<ul>
+    {% for Card in Cards %}
+    <li> Card.idea </li>
+    <li> Card.gist </li>
+    <br>
+    {% endfor %}
+</ul>
+{% endblock %}
+
