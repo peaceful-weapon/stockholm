@@ -25,7 +25,7 @@ def course_view(request, course_title):
 def deck_view(request, course_title, deck_title):
     Course_instance = Course.objects.get(title=course_title)
     Deck_instance = Deck.objects.get(title=deck_title)
-    Cards_from_deck = Card.objects.filter(deck=deck_title)
+    Cards_from_deck = Card.objects.filter(deck__title__exact=deck_title)
     template = get_template('deck_of_cards.html')
     variables = Context({
         'Course': Course_instance,

@@ -10,7 +10,7 @@ Main page for {{ Course.title }}
 
 <ul>
 {% for deck in Decks %}
-<li> {{ deck.title }} </li>
+<li> <a href="/course/{{ Course.title }}/{{ deck.title }}"> {{ deck.title }} </li>
 
 {% empty %}
 <p> there are no decks available for this course </p>

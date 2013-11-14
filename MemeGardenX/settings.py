@@ -12,7 +12,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '/home/smart/.virtualenvs/MemeGarden/MemeGardenX/dbase.db',                      # Or path to database file if using sqlite3.
+        'NAME': '/home/sche/Hope/stockholm/dbase.db',                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
         'USER': '',
         'PASSWORD': '',
@@ -110,14 +110,13 @@ WSGI_APPLICATION = 'MemeGardenX.wsgi.application'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    "/home/smart/.virtualenvs/MemeGarden/MemeGardenX/templates/"
+    "/home/sche/Hope/stockholm/templates/"
 )
 
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'south',
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
@@ -159,7 +158,7 @@ LOGGING = {
     }
 }
 
-INTERNAL_IPS = ('127.0.0.1',)
+INTERNAL_IPS = ('206.172.0.205')
 
 DEBUG_TOOLBAR_PANELS = (
     'debug_toolbar.panels.version.VersionDebugPanel',
